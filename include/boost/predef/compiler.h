@@ -10,6 +10,10 @@ http://www.boost.org/LICENSE_1_0.txt)
 #define BOOST_PREDEF_COMPILER_H
 #endif
 
+// NVCC emulates either gcc or clang depending on the host compiler being set
+// on the command line. Therefore it has to appear before both of them.
+#include <boost/predef/compiler/nvcc.h>
+
 #include <boost/predef/compiler/borland.h>
 #include <boost/predef/compiler/clang.h>
 #include <boost/predef/compiler/comeau.h>
@@ -32,7 +36,6 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <boost/predef/compiler/metrowerks.h>
 #include <boost/predef/compiler/microtec.h>
 #include <boost/predef/compiler/mpw.h>
-#include <boost/predef/compiler/nvcc.h>
 #include <boost/predef/compiler/palm.h>
 #include <boost/predef/compiler/pgi.h>
 #include <boost/predef/compiler/sgi_mipspro.h>
